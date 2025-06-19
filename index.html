@@ -1,11 +1,117 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
+
+<!-- 
+
+변경된 디자인 특징:
+    색상 팔레트:
+        블랙 (#000000) - 제목, 강조 요소
+        그레이 (#666666, #555555, #333333) - 본문 텍스트
+        화이트 (#ffffff) - 배경
+        연한 그레이 (#f8f9fa, #e9ecef) - 구분선과 배경
+    폰트 굵기:
+        볼드체 (700) - 이름, 섹션 제목, 강조 텍스트
+        라이트체 (300) - 직함
+        일반체 (400) - 본문 텍스트, 설명
+    심플한 디자인 요소:
+        그라데이션 제거, 단색 배경 사용
+        미니멀한 그림자와 호버 효과
+        깔끔한 테두리와 둥근 모서리
+        적절한 여백과 타이포그래피
+    가독성 향상:
+        명확한 계층 구조
+        충분한 줄 간격과 여백
+        대비가 좋은 색상 조합
+        깔끔한 리스트 스타일
+        반응형 디자인: 모바일과 태블릿에서도 최적화된 레이아웃
+
+-->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>lorem</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
 </head>
+
 <body>
-    
+    <main class="main">
+        <div class="container">
+            <div class="profile-header">
+                <img src="/Users/minhyuuk/VsCodeProject/minhyuuk.github.io/my-profile.png" alt="프로필 사진" class="profile-image">
+                <h1 class="name">Hello,<br>My Dear :)</h1>
+            </div>
+            <!-- <p class="title">My Dear :)</p> -->
+        </div>
+        <div class="container">
+            <section class="intro">
+                <p class="description">
+                    We develop services that prioritize user satisfaction.
+                    We like to solve complex problems simply and clearly.
+                    We develop services that prioritize user satisfaction.
+                    We like to solve complex problems simply and clearly.
+                </p>
+            </section>
+
+
+            <section class="experience">
+                <h2>Work Experience.</h2>
+                
+                <div class="job">
+                    <div class="job-header">
+                        <h3>주식회사 힉스</h3>
+                        <span class="job-title">Android Engineer</span>
+                        <span class="job-period">2024년 3월 ~ 현재</span>
+                    </div>
+                    
+                    <div class="project">
+                        <h4>Android</h4>
+                        <p>2024년 3월 ~ 현재</p>
+                        
+                        <h5>역할 및 기여</h5>
+                        <ul>
+                            <li>simply dummy text of the printing and typesetting industry. 
+                                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+                                when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+                                It has survived not only five centuries, but also the leap into electronic typesetting, 
+                                remaining essentially unchanged. 
+                                It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, 
+                                and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                            </li>
+                        </ul>
+
+                        <h5>주요 성과</h5>
+                        <ul>
+                            <li>simply dummy text of the printing and typesetting industry. 
+                                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+                                when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+                                It has survived not only five centuries, but also the leap into electronic typesetting, 
+                                remaining essentially unchanged. 
+                                It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, 
+                                and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                            </li>
+                        </ul>
+                        
+                        <div class="tech-stack">
+                            <strong>기술 스택</strong><br>
+                            React, TypeScript, Redux, TanStack Query, Jest, Playwright, AWS, GitHub Actions
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div>
+                <h2>Contact</h2>
+            </div>
+            
+            <div class="copyright">
+                © 2025 minhyuuk All rights reserved.
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
