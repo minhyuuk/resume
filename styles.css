@@ -217,3 +217,11 @@
   .experience .experience-group { grid-template-columns: 1fr; row-gap: 0.75rem; }
   .experience .exp-col2 { grid-column: 1; }
 }
+
+:root { --copied-text: #9CA3AF; }
+
+/* 부분 텍스트 전용 */
+.copied { color: var(--copied-text); }
+
+/* 블록 전체에 적용하고 싶으면 */
+.experience .exp-col2 .description_info.copied { color: var(--copied-text); }
