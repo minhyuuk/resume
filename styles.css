@@ -31,7 +31,12 @@
   }
   
   .name .dot {
-    color: rgb(163, 224, 177);
+    color: rgb(255, 161, 92);  
+  }
+
+  .emphasis{
+    color: rgb(255, 161, 92);
+    text-decoration: underline;
   }
   
   .main {
@@ -227,3 +232,12 @@
 
 /* 블록 전체에 적용하고 싶으면 */
 .experience .exp-col2 .description_info.copied { color: var(--copied-text); }
+
+/* Experience section hr styling - 그리드 내에서 전체 가로 영역 차지 */
+.experience .experience-group hr {
+  grid-column: 1 / -1; /* 첫 번째 컬럼부터 마지막 컬럼까지 전체 차지 */
+  width: 100%;
+  border: none;
+  border-top: 1px solid #e9ecef;
+  margin: 2rem 0;
+}
