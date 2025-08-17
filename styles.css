@@ -31,11 +31,11 @@
   }
   
   .name .dot {
-    color: rgb(255, 161, 92);  
+    color:#3CB371;
   }
 
   .emphasis{
-    color: rgb(255, 161, 92);
+    color: #3CB371;
     text-decoration: underline;
   }
   
@@ -240,4 +240,8 @@
   border: none;
   border-top: 1px solid #e9ecef;
   margin: 2rem 0;
+}
+
+li::marker {
+  color: #3CB371;
 }
