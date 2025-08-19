@@ -245,3 +245,9 @@
 li::marker {
   color: #3CB371;
 }
+
+/* li 태그 텍스트 정렬 - 두 번째 줄부터도 마커와 같은 위치에서 시작 */
+li {
+  text-indent: -1.2em;
+  padding-left: 1.2em;
+}
