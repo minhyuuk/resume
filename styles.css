@@ -248,6 +248,6 @@ li::marker {
 
 /* li 태그 텍스트 정렬 - 두 번째 줄부터도 마커와 같은 위치에서 시작 */
 li {
-  text-indent: -1.2em;
-  padding-left: 1.2em;
+  text-indent: -1.35em;
+  padding-left: 1.35em;
 }
