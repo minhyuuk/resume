@@ -222,7 +222,7 @@
 /* 반응형 */
 @media (max-width: 768px) {
   .experience .experience-group { grid-template-columns: 1fr; row-gap: 0.75rem; }
-  .experience .exp-col2 { grid-column: 1; }
+  .experience .exp-col2 .other-experience{ grid-column: 1; }
 }
 
 :root { --copied-text: #9CA3AF; }
