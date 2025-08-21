@@ -1,1 +1,2 @@
-# minhyuuk.github.io
+### My Resume :
+https://minhyuuk.github.io/resume/
