@@ -30,7 +30,7 @@
     letter-spacing: -0.02em;
   }
   
-  .name .dot {
+  .dot {
     color:#3CB371;
   }
 
@@ -77,7 +77,7 @@
   }
   
   .footer {
-    background: #000;
+    background: #fff;
     color: #fff;
     padding: 4rem 0 2rem;
     margin-top: 5rem;
@@ -86,7 +86,6 @@
   .copyright {
     text-align: center;
     padding-top: 2rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
     color: #999;
     font-size: 0.9rem;
     font-weight: 300;
@@ -222,7 +221,7 @@
 /* 반응형 */
 @media (max-width: 768px) {
   .experience .experience-group { grid-template-columns: 1fr; row-gap: 0.75rem; }
-  .experience .exp-col2 .other-experience{ grid-column: 1; }
+  .experience .exp-col2{ grid-column: 1; }
 }
 
 :root { --copied-text: #9CA3AF; }
@@ -250,4 +249,109 @@ li::marker {
 li {
   text-indent: -1.35em;
   padding-left: 1.35em;
+}
+
+/* 새로운 섹션들을 위한 통일된 스타일 */
+.other-experience,
+.overall-summary,
+.skills,
+.other-activities,
+.contact-info {
+  margin-bottom: 100px;
+}
+
+.section-content {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.content-group {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.content-item {
+  display: block;
+}
+
+.content-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* 텍스트 타입별 스타일링 */
+.main-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+  color: #000;
+  text-align: left;
+  letter-spacing: -0.02em;
+}
+
+.sub-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 0.5rem;
+}
+
+.role-with-time-text {
+  font-size: 1.05rem;
+  font-weight: 300;
+  color: #000;
+  line-height: 1.6;
+}
+.explanation-text {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: #000;
+  line-height: 1.6;
+}
+
+.description-text {
+  font-size: 1.05rem;
+  font-weight: 300;
+  color: #000;
+  line-height: 1.8;
+}
+
+/* 구분선 스타일 */
+.content-group hr {
+  width: 100%;
+  border: none;
+  border-top: 1px solid #e9ecef;
+  margin: 2rem 0;
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+  .main-title {
+    font-size: 2rem;
+  }
+  
+  .sub-title {
+    font-size: 1.4rem;
+  }
+  
+  .role-text,
+  .description-text {
+    font-size: 1rem;
+  }
+  
+  .time-text {
+    font-size: 0.9rem;
+  }
+}
+
+.role-with-time-text strong {
+  font-weight: 600;
+}
+
+/* Contact 섹션 링크 underline 제거 */
+.other-activities a {
+  text-decoration: none;
 }
