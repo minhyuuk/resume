@@ -1,263 +1,236 @@
-/* styles.css (전체 교체) */
+/* === Reset & Base Styles === */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: 'Pretendard', -apple-system, 'Apple SD Gothic Neo', sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background: #fff;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .container {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
-  
-  .name {
-    font-size: 3.5rem;
-    font-weight: 700;
-    color: #000;
-    margin-bottom: 0.5rem;
-    text-align: left;
-    letter-spacing: -0.02em;
-  }
-  
-  .dot {
-    color:#3CB371;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  .emphasis{
-    color: #3CB371;
-    text-decoration: underline;
-  }
-  
-  .main {
-    padding: 4rem 0;
-    flex: 1;
-  }
-  
-  .main .container {
-    padding: 0;
-    animation: fadeInUp 0.6s ease-out;
-  }
-  
-  .intro {
-    text-align: left;
-    margin-bottom: 5rem;
-  }
-  
-  .description {
-    font-size: 1.8rem;
-    color: #666;
-    text-align: left;
-    font-weight: 300;
-    letter-spacing: 0.01em;
-    padding-inline-end: 200px; /* 200px(img) + 50px 간격 */
-  }
-  
-  section {
-    margin-bottom: 100px;
-  }
-  
-  h2 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 3rem;
-    color: #000;
-    text-align: left;
-    letter-spacing: -0.02em;
-  }
-  
-  .footer {
-    background: #fff;
-    color: #fff;
-    padding: 4rem 0 2rem;
-    margin-top: 5rem;
-  }
-  
-  .copyright {
-    text-align: center;
-    padding-top: 2rem;
-    color: #999;
-    font-size: 0.9rem;
-    font-weight: 300;
-  }
-  
-  /* Profile header */
-  .profile-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 2rem;
-    margin-bottom: 5rem;
-  }
-  
-  .profile-header .name {
-    order: 1;
-  }
-  
-  .profile-header .profile-image {
-    order: 2;
-  }
-  
-  .profile-image {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid #e9ecef;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .profile-image:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15);
-  }
-  
-  /* Animations */
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  /* Responsive */
-  @media (max-width: 768px) {
-    .container {
-      padding: 0 15px;
-    }
-    .profile-header {
-      flex-direction: column;
-      text-align: center;
-      gap: 1.5rem;
-    }
-    .profile-image {
-      width: 100px;
-      height: 100px;
-    }
-    .name {
-      font-size: 2.5rem;
-    }
-    h2 {
-      font-size: 2rem;
-    }
-    .profile-header .name,
-    .profile-header .profile-image {
-      order: 0;
-    }
-    .description { padding-inline-end: 0; }
-  }
-  
-  @media (max-width: 480px) {
-    .name {
-      font-size: 2rem;
-    }
-    .profile-image {
-      width: 80px;
-      height: 80px;
-    }
-  }
+body {
+  font-family: 'Pretendard', -apple-system, 'Apple SD Gothic Neo', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background: #fff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
 
-/* Experience (경력 섩션) - REVISED */
+/* === Variables === */
+:root {
+  --primary-color: #3CB371;
+  --text-dark: #000;
+  --text-medium: #333;
+  --text-light: #666;
+  --text-lighter: #999;
+  --text-copied: #9CA3AF;
+  --border-color: #e9ecef;
+  --container-max-width: 1000px;
+  --section-spacing: 100px;
+}
+
+/* === Layout === */
+.container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.main {
+  padding: 4rem 0;
+  flex: 1;
+}
+
+.main .container {
+  padding: 0;
+  animation: fadeInUp 0.6s ease-out;
+}
+
+section {
+  margin-bottom: var(--section-spacing);
+}
+
+/* === Typography === */
+.name {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 0.5rem;
+  text-align: left;
+  letter-spacing: -0.02em;
+}
+
+.dot {
+  color: var(--primary-color);
+}
+
+.emphasis {
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
+.copied {
+  color: var(--text-copied);
+}
+
+h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+  color: var(--text-dark);
+  text-align: left;
+  letter-spacing: -0.02em;
+}
+
+/* === Profile Section === */
+.profile-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 5rem;
+}
+
+.profile-header .name {
+  order: 1;
+}
+
+.profile-header .profile-image {
+  order: 2;
+}
+
+.profile-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--border-color);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15);
+}
+
+.intro {
+  text-align: left;
+  margin-bottom: 5rem;
+}
+
+.description {
+  font-size: 1.8rem;
+  color: var(--text-light);
+  text-align: left;
+  font-weight: 300;
+  letter-spacing: 0.01em;
+  padding-inline-end: 200px;
+}
+
+/* === Experience Section === */
 .experience .experience-list {
   display: flex;
   flex-direction: column;
   gap: 4rem;
 }
 
-/* 회사별 그룹(1개의 회사 = 1개의 그룹) */
 .experience .experience-group {
   display: grid;
   grid-template-columns: max-content 1fr;
-  column-gap: 100px; /* company_name 기준 100px 뒤에서 2열 시작 */
+  column-gap: 100px;
   row-gap: 1.25rem;
   align-items: start;
 }
 
-/* 각 row(아이템)는 내용만 흐르게 -> 자식(.exp-col1/.exp-col2)를 그룹 그리드에 직접 올림 */
 .experience .experience-item {
   display: contents;
 }
 
-/* 명시적 컬럼 배치 */
-.experience .exp-col1 { grid-column: 1; }
-.experience .exp-col2 { grid-column: 2; }
-
-/* 2열만 반복되는 경우: 1열은 렌더하지 않지만, 그룹 그리드가 2열 위치를 고정 유지 */
-.experience .experience-item--continuation .exp-col1 { display: none; }
-
-/* 타이포(요청한 사이징/웨이트) */
-.experience .exp-col1 .company_name { font-size: 1.6rem; font-weight: 700; color: #000; }
-.experience .exp-col1 .job,
-.experience .exp-col1 .tenure { font-size: 0.95rem; font-weight: 300; color: #666; line-height: 1.7; }
-.experience .exp-col1 .job { margin-top: 0.4rem; }
-.experience .exp-col1 .tenure { margin-top: 0.25rem; }
-
-.experience .exp-col2 .team_name { font-size: 1.6rem; font-weight: 700; color: #000; margin-bottom: 0.8rem; }
-.experience .exp-col2 .description_title,
-.experience .exp-col2 .my_role_title,
-.experience .exp-col2 .stack_title { font-size: 1.2rem; font-weight: 700; color: #111; margin-top: 1.2rem; margin-bottom: 0.4rem; }
-.experience .exp-col2 .description_info,
-.experience .exp-col2 .my_role_info,
-.experience .exp-col2 .stack_info { font-size: 1.05rem; font-weight: 400; color: #444; line-height: 1.8; }
-
-/* 구분선 사용 안 함: 이전 규칙 무효화 */
-.experience .experience-item + .experience-item { border-top: 0 !important; padding-top: 0 !important; }
-
-/* 반응형 */
-@media (max-width: 768px) {
-  .experience .experience-group { grid-template-columns: 1fr; row-gap: 0.75rem; }
-  .experience .exp-col2{ grid-column: 1; }
+.experience .exp-col1 {
+  grid-column: 1;
 }
 
-:root { --copied-text: #9CA3AF; }
+.experience .exp-col2 {
+  grid-column: 2;
+}
 
-/* 부분 텍스트 전용 */
-.copied { color: var(--copied-text); }
+.experience .experience-item--continuation .exp-col1 {
+  display: none;
+}
 
-/* 블록 전체에 적용하고 싶으면 */
-.experience .exp-col2 .description_info.copied { color: var(--copied-text); }
+/* Experience Typography */
+.experience .exp-col1 .company_name {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--text-dark);
+}
 
-/* Experience section hr styling - 그리드 내에서 전체 가로 영역 차지 */
+.experience .exp-col1 .job,
+.experience .exp-col1 .tenure {
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: var(--text-light);
+  line-height: 1.7;
+}
+
+.experience .exp-col1 .job {
+  margin-top: 0.4rem;
+}
+
+.experience .exp-col1 .tenure {
+  margin-top: 0.25rem;
+}
+
+.experience .exp-col2 .team_name {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 0.8rem;
+}
+
+.experience .exp-col2 .description_title,
+.experience .exp-col2 .my_role_title,
+.experience .exp-col2 .stack_title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #111;
+  margin-top: 1.2rem;
+  margin-bottom: 0.4rem;
+}
+
+.experience .exp-col2 .description_info,
+.experience .exp-col2 .my_role_info,
+.experience .exp-col2 .stack_info {
+  font-size: 1.05rem;
+  font-weight: 400;
+  color: #444;
+  line-height: 1.8;
+}
+
+/* Experience HR Styling */
 .experience .experience-group hr {
-  grid-column: 1 / -1; /* 첫 번째 컬럼부터 마지막 컬럼까지 전체 차지 */
+  grid-column: 1 / -1;
   width: 100%;
   border: none;
-  border-top: 1px solid #e9ecef;
+  border-top: 1px solid var(--border-color);
   margin: 2rem 0;
 }
 
+/* === List Styling === */
 li::marker {
-  color: #3CB371;
+  color: var(--primary-color);
 }
 
-/* li 태그 텍스트 정렬 - 두 번째 줄부터도 마커와 같은 위치에서 시작 */
 li {
   text-indent: -1.35em;
   padding-left: 1.35em;
 }
 
-/* 새로운 섹션들을 위한 통일된 스타일 */
+/* === Common Section Styles === */
 .other-experience,
-.overall-summary,
 .skills,
-.other-activities,
-.contact-info {
-  margin-bottom: 100px;
+.other-activities {
+  margin-bottom: var(--section-spacing);
 }
 
 .section-content {
@@ -282,12 +255,12 @@ li {
   gap: 0.75rem;
 }
 
-/* 텍스트 타입별 스타일링 */
+/* === Text Type Styles === */
 .main-title {
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 3rem;
-  color: #000;
+  color: var(--text-dark);
   text-align: left;
   letter-spacing: -0.02em;
 }
@@ -295,63 +268,120 @@ li {
 .sub-title {
   font-size: 1.6rem;
   font-weight: 700;
-  color: #000;
+  color: var(--text-dark);
   margin-bottom: 0.5rem;
 }
 
 .role-with-time-text {
   font-size: 1.05rem;
   font-weight: 300;
-  color: #000;
+  color: var(--text-dark);
   line-height: 1.6;
-}
-.explanation-text {
-  font-size: 1.05rem;
-  font-weight: 500;
-  color: #000;
-  line-height: 1.6;
-}
-
-.description-text {
-  font-size: 1.05rem;
-  font-weight: 300;
-  color: #000;
-  line-height: 1.8;
-}
-
-/* 구분선 스타일 */
-.content-group hr {
-  width: 100%;
-  border: none;
-  border-top: 1px solid #e9ecef;
-  margin: 2rem 0;
-}
-
-/* 반응형 */
-@media (max-width: 768px) {
-  .main-title {
-    font-size: 2rem;
-  }
-  
-  .sub-title {
-    font-size: 1.4rem;
-  }
-  
-  .role-text,
-  .description-text {
-    font-size: 1rem;
-  }
-  
-  .time-text {
-    font-size: 0.9rem;
-  }
 }
 
 .role-with-time-text strong {
   font-weight: 600;
 }
 
-/* Contact 섹션 링크 underline 제거 */
+.explanation-text {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+.description-text {
+  font-size: 1.05rem;
+  font-weight: 300;
+  color: var(--text-dark);
+  line-height: 1.8;
+}
+
+/* === Separator Styles === */
+.content-group hr {
+  width: 100%;
+  border: none;
+  border-top: 1px solid var(--border-color);
+  margin: 2rem 0;
+}
+
+/* === Link Styles === */
 .other-activities a {
   text-decoration: none;
+}
+
+/* === Animations === */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === Responsive Design === */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 15px;
+  }
+
+  .profile-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+  }
+
+  .profile-header .name,
+  .profile-header .profile-image {
+    order: 0;
+  }
+
+  .profile-image {
+    width: 100px;
+    height: 100px;
+  }
+
+  .name {
+    font-size: 2.5rem;
+  }
+
+  .description {
+    padding-inline-end: 0;
+  }
+
+  .experience .experience-group {
+    grid-template-columns: 1fr;
+    row-gap: 0.75rem;
+  }
+
+  .experience .exp-col2 {
+    grid-column: 1;
+  }
+
+  .main-title,
+  h2 {
+    font-size: 2rem;
+  }
+
+  .sub-title {
+    font-size: 1.4rem;
+  }
+
+  .description-text {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .name {
+    font-size: 2rem;
+  }
+
+  .profile-image {
+    width: 80px;
+    height: 80px;
+  }
 }
