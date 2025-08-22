@@ -15,28 +15,55 @@ body {
   flex-direction: column;
 }
 
-/* === Variables === */
+/* === CSS Variables === */
 :root {
+  /* Colors */
   --primary-color: #3CB371;
   --text-dark: #000;
   --text-medium: #333;
   --text-light: #666;
-  --text-lighter: #999;
   --text-copied: #9CA3AF;
   --border-color: #e9ecef;
+  --bg-white: #fff;
+  
+  /* Layout */
   --container-max-width: 1000px;
   --section-spacing: 100px;
+  --content-padding: 20px;
+  --profile-gap: 2rem;
+  --profile-margin-bottom: 5rem;
+  
+  /* Typography Scale */
+  --font-size-name: 3.5rem;
+  --font-size-h2: 2.5rem;
+  --font-size-description: 1.8rem;
+  --font-size-company: 1.6rem;
+  --font-size-body: 1.05rem;
+  --font-size-small: 0.95rem;
+  --font-size-subtitle: 1.2rem;
+  
+  /* Spacing */
+  --main-padding: 4rem;
+  --experience-gap: 4rem;
+  --column-gap: 100px;
+  --row-gap: 1.25rem;
+  
+  /* Profile Image */
+  --profile-image-size: 200px;
+  --profile-image-border: 3px;
+  --profile-image-mobile: 100px;
+  --profile-image-small: 80px;
 }
 
-/* === Layout === */
+/* === Layout Components === */
 .container {
   max-width: var(--container-max-width);
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 var(--content-padding);
 }
 
 .main {
-  padding: 4rem 0;
+  padding: var(--main-padding) 0;
   flex: 1;
 }
 
@@ -49,9 +76,9 @@ section {
   margin-bottom: var(--section-spacing);
 }
 
-/* === Typography === */
+/* === Typography Utilities === */
 .name {
-  font-size: 3.5rem;
+  font-size: var(--font-size-name);
   font-weight: 700;
   color: var(--text-dark);
   margin-bottom: 0.5rem;
@@ -73,7 +100,7 @@ section {
 }
 
 h2 {
-  font-size: 2.5rem;
+  font-size: var(--font-size-h2);
   font-weight: 700;
   margin-bottom: 3rem;
   color: var(--text-dark);
@@ -86,8 +113,8 @@ h2 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 2rem;
-  margin-bottom: 5rem;
+  gap: var(--profile-gap);
+  margin-bottom: var(--profile-margin-bottom);
 }
 
 .profile-header .name {
@@ -99,25 +126,12 @@ h2 {
 }
 
 .profile-image {
-  width: 200px;
-  height: 200px;
+  width: var(--profile-image-size);
+  height: var(--profile-image-size);
   border-radius: 50%;
   object-fit: cover;
-  border: 3px solid var(--border-color);
+  border: var(--profile-image-border) solid var(--border-color);
   transition: transform 0.3s ease;
-}
-
-/* PDF 출력용 미디어 쿼리 추가 */
-@media print {
-  .profile-image {
-    box-shadow: none !important;
-    border: 2px solid var(--border-color);
-  }
-  
-  .profile-image:hover {
-    transform: none;
-    box-shadow: none;
-  }
 }
 
 .profile-image:hover {
@@ -127,11 +141,11 @@ h2 {
 
 .intro {
   text-align: left;
-  margin-bottom: 5rem;
+  margin-bottom: var(--profile-margin-bottom);
 }
 
 .description {
-  font-size: 1.8rem;
+  font-size: var(--font-size-description);
   color: var(--text-light);
   text-align: left;
   font-weight: 300;
@@ -143,14 +157,14 @@ h2 {
 .experience .experience-list {
   display: flex;
   flex-direction: column;
-  gap: 4rem;
+  gap: var(--experience-gap);
 }
 
 .experience .experience-group {
   display: grid;
   grid-template-columns: max-content 1fr;
-  column-gap: 100px;
-  row-gap: 1.25rem;
+  column-gap: var(--column-gap);
+  row-gap: var(--row-gap);
   align-items: start;
 }
 
@@ -172,14 +186,14 @@ h2 {
 
 /* Experience Typography */
 .experience .exp-col1 .company_name {
-  font-size: 1.6rem;
+  font-size: var(--font-size-company);
   font-weight: 700;
   color: var(--text-dark);
 }
 
 .experience .exp-col1 .job,
 .experience .exp-col1 .tenure {
-  font-size: 0.95rem;
+  font-size: var(--font-size-small);
   font-weight: 300;
   color: var(--text-light);
   line-height: 1.7;
@@ -194,7 +208,7 @@ h2 {
 }
 
 .experience .exp-col2 .team_name {
-  font-size: 1.6rem;
+  font-size: var(--font-size-company);
   font-weight: 700;
   color: var(--text-dark);
   margin-bottom: 0.8rem;
@@ -203,7 +217,7 @@ h2 {
 .experience .exp-col2 .description_title,
 .experience .exp-col2 .my_role_title,
 .experience .exp-col2 .stack_title {
-  font-size: 1.2rem;
+  font-size: var(--font-size-subtitle);
   font-weight: 700;
   color: #111;
   margin-top: 1.2rem;
@@ -213,7 +227,7 @@ h2 {
 .experience .exp-col2 .description_info,
 .experience .exp-col2 .my_role_info,
 .experience .exp-col2 .stack_info {
-  font-size: 1.05rem;
+  font-size: var(--font-size-body);
   font-weight: 400;
   color: #444;
   line-height: 1.8;
@@ -269,7 +283,7 @@ li {
 
 /* === Text Type Styles === */
 .main-title {
-  font-size: 2.5rem;
+  font-size: var(--font-size-h2);
   font-weight: 700;
   margin-bottom: 3rem;
   color: var(--text-dark);
@@ -278,14 +292,14 @@ li {
 }
 
 .sub-title {
-  font-size: 1.6rem;
+  font-size: var(--font-size-company);
   font-weight: 700;
   color: var(--text-dark);
   margin-bottom: 0.5rem;
 }
 
 .role-with-time-text {
-  font-size: 1.05rem;
+  font-size: var(--font-size-body);
   font-weight: 300;
   color: var(--text-dark);
   line-height: 1.6;
@@ -296,14 +310,14 @@ li {
 }
 
 .explanation-text {
-  font-size: 1.05rem;
+  font-size: var(--font-size-body);
   font-weight: 500;
   color: var(--text-dark);
   line-height: 1.6;
 }
 
 .description-text {
-  font-size: 1.05rem;
+  font-size: var(--font-size-body);
   font-weight: 300;
   color: var(--text-dark);
   line-height: 1.8;
@@ -322,6 +336,11 @@ li {
   text-decoration: none;
 }
 
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
 /* === Animations === */
 @keyframes fadeInUp {
   from {
@@ -334,7 +353,7 @@ li {
   }
 }
 
-/* === Responsive Design === */
+/* === Mobile Responsive === */
 @media (max-width: 768px) {
   .container {
     padding: 0 10px;
@@ -353,8 +372,8 @@ li {
   }
 
   .profile-image {
-    width: 100px;
-    height: 100px;
+    width: var(--profile-image-mobile);
+    height: var(--profile-image-mobile);
   }
 
   .name {
@@ -387,10 +406,7 @@ li {
     text-align: center;
   }
 
-  .explanation-text {
-    text-align: center;
-  }
-
+  .explanation-text,
   .role-with-time-text {
     text-align: center;
   }
@@ -411,7 +427,46 @@ li {
   }
 
   .profile-image {
-    width: 80px;
-    height: 80px;
+    width: var(--profile-image-small);
+    height: var(--profile-image-small);
+  }
+}
+
+/* === Print Styles === */
+@media print {
+  @page {
+    margin: 1cm;
+    size: A4;
+  }
+  
+  * {
+    -webkit-print-color-adjust: exact !important;
+    color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    animation: none !important;
+    transition: none !important;
+  }
+  
+  body {
+    font-family: 'Pretendard', -apple-system, 'Apple SD Gothic Neo', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: var(--bg-white) !important;
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .main .container {
+    animation: none;
+  }
+  
+  .profile-image:hover {
+    transform: none;
+    box-shadow: none;
+  }
+  
+  .profile-header {
+    page-break-inside: avoid;
   }
 }
