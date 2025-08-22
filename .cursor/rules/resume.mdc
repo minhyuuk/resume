@@ -1,0 +1,55 @@
+---
+description: Basic rules
+globs:
+alwaysApply: true
+---
+
+# 🌐 Cursor Workspace Web Dev Guidelines
+
+## 1. 기본 원칙
+- KISS(단순 명료), DRY(중복 제거)
+- 가독성, 유지보수성 우선 (심각한 성능 이슈만 예외)
+- 모바일 퍼스트 (min-width Media Query)
+
+## 2. HTML
+- 시맨틱 태그 우선 (header, nav, main, section, article, footer)
+- 이동은 <a>, 액션은 <button>
+- 이미지: alt 필수
+- 폼 요소: label + aria-label 연결
+- landmark + role 적극 활용
+
+## 3. CSS
+- 클래스 네이밍: BEM + kebab-case  
+  예) .card__title--highlight
+- CSS 변수(:root { --primary-color }) 활용
+- Flexbox 기본, Grid는 2D 레이아웃 시 필요할 때만
+- 선택자 깊이 최대 3단계
+- !important 사용 금지 (불가피한 경우만)
+- position: absolute 최소화
+
+## 4. 반응형
+- Mobile First, min-width 기준
+- Base → 768px(Tablet) → 1200px(Desktop)
+- 터치 영역 최소 44px
+- rem, em 단위 우선 사용
+
+## 5. 브라우저 호환성
+- 지원: Chrome, Safari, Edge, Firefox 최신 2버전
+- 신규 CSS 확인: caniuse.com
+- autoprefixer(PostCSS) 사용
+- Safari issue 점검: flex-gap, sticky 등
+
+## 6. Cursor 활용
+- 반복되는 패턴 → Cursor 리팩토링 활용
+- Prettier + ESLint로 코드 일관성 유지
+- Cursor Preview + 실제 브라우저 병행 테스트
+- 필요 시 React/JS로 확장 가능
+
+## 7. 체크리스트
+- [ ] HTML 구조 시맨틱 확인
+- [ ] alt, aria-label 누락 없음
+- [ ] label 연결된 폼 요소
+- [ ] CSS 변수 일관성 확인
+- [ ] 중복 스타일 제거
+- [ ] 반응형 (모바일~데스크탑 확인)
+- [ ] 4대 브라우저 호환성 테스트
